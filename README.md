@@ -19,10 +19,10 @@ This app provides a user-friendly interface for browsing coffee products, viewin
 
 - **Frontend:** HTML, CSS, JavaScript  
 - **Backend:** Python (Flask/Django) or Node.js (depending on repo setup)  
-- **Database:** SQLite / MongoDB / JSON data file  
-- **Other:** Fetch API / Axios for API calls
+- **Database:**  pinecone/ JSON data file  
+- **Tools:**  langchain , pandas,numpy,Chatgroq  
 
 ---
 
-## 📂 Project Structure
+
 
