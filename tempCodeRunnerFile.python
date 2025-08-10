@@ -1,0 +1,21 @@
+import os
+import shutil
+import tempfile
+import subprocess
+
+def clone_structure_only(repo_url, output_dir="agentic-structure-only"):
+    with tempfile.TemporaryDirectory() as temp_dir:
+        subprocess.run(["git", "clone", repo_url, temp_dir], check=True)
+        
+        if os.path.exists(output_dir):
+            shutil.rmtree(output_dir)
+
+        for root, dirs, _ in os.walk(temp_dir):
+            rel_path = os.path.relpath(root, temp_dir)
+            target_path = os.path.join(output_dir, rel_path)
+            os.makedirs(target_path, exist_ok=True)
+
+    print(f"Folder structure copied to: {output_dir}")
+
+repo_url = "https://github.com/abdullahtarek/coffee_shop_customer_service_chatbot"
+clone_structure_only(repo_url)
